@@ -3,7 +3,10 @@
 const firstNameInput = document.getElementById('firstName');
 const lastNameInput = document.getElementById('lastName');
 const idInput = document.getElementById('idNumber');
+const jobTitleInput = document.getElementById('jobTitle');
 const salaryInput = document.getElementById('salary');
+
+const submitButton = document.getElementById('submitButton');
 
 // Employee container
 const employees = document.getElementById('employeeData');
@@ -11,12 +14,23 @@ const employees = document.getElementById('employeeData');
 // Monthly cost display
 const totalMonthly = document.getElementById('totalMonthly');
 
+// Employee currentIndex
+var currentIndex = 0;
+
 /**Function to add employees to the DOM.
  * Will call update monthly cost and over budget check
  */
 function addEmployee(event){
+    // Incrementing currentIndex
+    currentIndex ++;
+
     // Creating a new employee row
     let employee = document.createElement('tr');
+
+    // Creating a new index table data
+    let index = document.createElement('td');
+    index.textContent = currentIndex;
+    employee.appendChild(index);
 
     // Creating a new first name table data
     let firstName = document.createElement('td');
@@ -32,6 +46,10 @@ function addEmployee(event){
     let idNumber = document.createElement('td');
     idNumber.textContent = idInput.value;
     employee.appendChild(idNumber);
+
+    let jobTitle = document.createElement('td');
+    jobTitle.textContent = jobTitleInput.value;
+    employee.appendChild(jobTitle);
 
     // Creating a new salary table data
     let salary = document.createElement('td');
@@ -70,3 +88,12 @@ function addEmployee(event){
 
 
 /* Event listeners to give buttons functionality */
+submitButton.addEventListener('click', function(event){
+    event.preventDefault();
+    addEmployee();
+    firstNameInput.value = '';
+    lastNameInput.value = '';
+    idInput.value = '';
+    jobTitleInput.value = '';
+    salaryInput.value = '';
+})
