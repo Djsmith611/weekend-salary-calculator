@@ -11,9 +11,42 @@ const employees = document.getElementById('employeeData');
 // Monthly cost display
 const totalMonthly = document.getElementById('totalMonthly');
 
-/**Function to add employees to the DOM, button needs to have data-testid="submitButton".
+/**Function to add employees to the DOM.
  * Will call update monthly cost and over budget check
  */
+function addEmployee(event){
+    // Creating a new employee row
+    let employee = document.createElement('tr');
+
+    // Creating a new first name table data
+    let firstName = document.createElement('td');
+    firstName.textContent = firstNameInput.value;
+    employee.appendChild(firstName);
+
+    // Creating a new last name table data
+    let lastName = document.createElement('td');
+    lastName.textContent = lastNameInput.value;
+    employee.appendChild(lastName);
+
+    // Creating a new id number table data
+    let idNumber = document.createElement('td');
+    idNumber.textContent = idInput.value;
+    employee.appendChild(idNumber);
+
+    // Creating a new salary table data
+    let salary = document.createElement('td');
+    salary.textContent = salaryInput.value;
+    employee.appendChild(salary);
+
+    // Creating a new remove button
+    let removeButton = document.createElement('button'); //will add onclick attribute after writing function
+    removeButton.textContent = 'Delete';
+    removeButton.className = 'deleteButton';
+    employee.appendChild(removeButton);
+
+    // Appending employee to the DOM
+    employees.appendChild(employee);
+}
 
 
 /**Function to check if over budget and apply over-budget if neccesary
