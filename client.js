@@ -17,8 +17,11 @@ const totalMonthly = document.getElementById('totalMonthly');
 // Employee currentIndex
 var currentIndex = 0;
 
+var currentMonthlyCost = 0;
+
 /**Function to add employees to the DOM.
  * Will call update monthly cost and over budget check
+ * @param {event} event 
  */
 function addEmployee(event){
     // Incrementing currentIndex
@@ -54,7 +57,11 @@ function addEmployee(event){
     // Creating a new salary table data
     let salary = document.createElement('td');
     salary.textContent = salaryInput.value;
+    salary.className = 'salaryValue';
     employee.appendChild(salary);
+
+    // Calling update on monthly cost
+    updateMonthlyCost();
 
     // Creating a new remove button
     let removeButton = document.createElement('button'); //will add onclick attribute after writing function
@@ -80,6 +87,15 @@ function addEmployee(event){
 /**Function to update monthly cost
  * Will call check if over budget
  */
+function updateMonthlyCost(event){
+    let salaryValue = salaryInput.value;
+    // Dividing by 12 for monthly cost
+    let monthlyPay = salaryValue / 12;
+    currentMonthlyCost += monthlyPay;
+
+    // Updating monthly cost on DOM
+    totalMonthly.textContent = currentMonthlyCost;
+}
 
 
 /**Function to update employeeIndex
