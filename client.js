@@ -20,6 +20,14 @@ var currentIndex = 0;
 // Monthly cost to update
 var currentMonthlyCost = 0;
 
+/* Budget variables */
+// Display for current budget
+const budgetDisplay = document.getElementById('budget');
+// Budget to update initialized at 20000
+var budget = 20000;
+// New budget field
+const newBudget = document.getElementById('budgetInput');
+
 /**Function to add employees to the DOM.
  * Will call update monthly cost and over budget check
  * @param {click} event 
@@ -65,13 +73,15 @@ function addEmployee(event){
     employees.appendChild(employee);
     // Clearing all input fields
     clearInputs();
-}
+}// End addEmployee
 
 
 /**Function to check if over budget and apply over-budget if neccesary
  * 
  */
+function checkBudget(){
 
+}
 
 /**
  * Removes employee and updates the salary
@@ -86,7 +96,7 @@ function removeEmployee(event){
     updateMonthlyCost(true, yearlyPay);
     // Removing employee from list
     event.target.parentElement.remove();
-}
+}// End removeEmployee
 
 
 /**
@@ -107,7 +117,7 @@ function updateMonthlyCost(isDeletion = false, salaryValue = 0){
     }
     // Updating totalMonthly, using toFixed to prevent 'weird computer math'
     totalMonthly.textContent = currentMonthlyCost.toFixed(2);
-}
+}// End updateMonthlyCost
 
 
 /**Function to update employeeIndex
@@ -124,10 +134,12 @@ function clearInputs(event){
     idInput.value = '';
     jobTitleInput.value = '';
     salaryInput.value = '';
-}
+} // End clearInputs
 
 /* Event listeners to give buttons functionality */
+// Submit button adds an employee
 submitButton.addEventListener('click', function(event){
     event.preventDefault();
     addEmployee();
 })
+// Delete button listeners are applied in the add employee function
