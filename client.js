@@ -21,7 +21,7 @@ var currentMonthlyCost = 0;
 
 /**Function to add employees to the DOM.
  * Will call update monthly cost and over budget check
- * @param {event} event 
+ * @param {click} event 
  */
 function addEmployee(event){
     // Incrementing currentIndex
@@ -67,6 +67,7 @@ function addEmployee(event){
     let removeButton = document.createElement('button'); //will add onclick attribute after writing function
     removeButton.textContent = 'Delete';
     removeButton.className = 'deleteButton';
+    removeButton.addEventListener('click', removeEmployee);
     employee.appendChild(removeButton);
 
     // Appending employee to the DOM
@@ -81,14 +82,20 @@ function addEmployee(event){
 
 /**Function to delete employees
  * Will call update monthly cost, update index
+ * @param {click} event 
  */
+function removeEmployee(event){
+    event.target.parentElement.remove();
+}
 
 
 /**Function to update monthly cost
  * Will call check if over budget
+ * @param {click} event 
  */
 function updateMonthlyCost(event){
     let salaryValue = salaryInput.value;
+    
     // Dividing by 12 for monthly cost
     let monthlyPay = salaryValue / 12;
     currentMonthlyCost += monthlyPay;
