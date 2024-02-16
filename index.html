@@ -17,11 +17,22 @@
         <label for="idNumber">ID #:</label><input type="number" id="idNumber"placeholder="ID">
         <label for="jobTitle">Title:</label><input type="text" id="jobTitle" placeholder="Title">
         <label for="salary">Salary:</label><input type="number" id="salary"placeholder="Salary">
+        <input type="submit">
       </form>
       <h2>Employees</h2>
+      <table>
+        <thead>
+          <th>Index</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Salary</th>
+        </thead>
+      </table>
     </main>
     <footer>
-      <p>Total Monthly</p>
+      <p>Total Monthly: <span id="totalMonthly">-</span></p>
     </footer>
   </body>
 </html>
