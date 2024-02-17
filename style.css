@@ -1,19 +1,34 @@
+:root {
+    --buttonHover: #2a0e89;
+    --buttonBackground: #000000;
+    --deleteButton: #370000;
+    --deleteButtonHover:rgb(235, 0, 0);
+    --elementBack: hsl(241, 76%, 62%);
+    --elementBackAlt:hsl(241, 50%, 48%);
+    --shadow: rgba(78, 155, 222, 0.334);
+}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    background: #000000;
+    color: #000000;
 }
 
 header {
-    background: #007BFF;
-    color: #fff;
+    background: var(--elementBack);
+    color: rgb(255, 255, 255);
     padding: 20px;
     text-align: center;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
+    box-shadow: 5px 5px 2px var(--shadow);
+    border: solid 1px var(--shadow);
+}
+
+h2 {
+    text-align: center;
 }
 
 h1 {
@@ -23,75 +38,169 @@ h1 {
 main {
     padding: 20px;
     padding-bottom: 100px;
+    color: #ffffff;
 }
 
-
-form {
-    background: #fff;
+form,
+#budgetDiv {
+    background: var(--elementBackAlt);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 1em;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 60%;
+    box-shadow: 5px 5px 3px var(--shadow);
+    border: solid 1px var(--shadow);
+
+}
+
+
+#budgetDiv {
+    margin-top: 2em;
+    padding-top: 0.5em;
+    border-top-left-radius: 60%;
+    border-top-right-radius: 50px;
 }
 
 label {
     display: block;
     margin: 15px 0 5px;
+    color: black;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="submit"],
-button {
+#budgetLabel {
+    color: #ffffff;
+    margin-left: 3em;
+}
+
+input,
+.button {
     width: 98%;
     padding: 10px;
     margin-top: 5px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(255, 255, 255);
+    background: var(--buttonBackground);
+    color: white;
 }
 
-input[type="submit"],
-button {
-    align-self: center;
-    background: #28a745;
-    color: #fff;
+#firstName {
+    width: 83%
+}
+
+#lastName {
+    width: 93%
+}
+
+.button {
+    display: inline-block;
     cursor: pointer;
+    text-decoration: none;
+    border: 3px solid var(--buttonHover);
+    padding: .5em 1em;
+    border-radius: .25em;
     margin-left: 10px;
+    position: relative;
+    isolation: isolate;
+    margin-top: 1em;
 }
 
-input[type="submit"]:hover,
-button:hover {
-    background: #218838;
+.button::after {
+    content:'';
+    position: absolute;
+    z-index: -1;
+    background: var(--buttonHover);
+    inset:0;
+    scale: 0 1;
+    transform-origin: right;
+    transition: scale 450ms;
 }
 
-.deleteButton{
-    background: red;
-    width: 100px;
+.button:hover::after,
+.button:focus-visible::after {
+    transform-origin: left;
+    scale: 1 1;
 }
-.deleteButton:hover {
-    background: rgb(145, 1, 1);
+
+.deleteButton {
+    background: var(--buttonBackground);
+    width: 100%;
+    color: white;
+    margin-right: 0;
+    margin-left: 0;
+    border: 3px solid var(--deleteButtonHover);
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    padding: .5em 1em;
+    border-radius: .25em;
+    position: relative;
+    isolation: isolate;
+    height: 100%;
+    margin-top: 0;
 }
+
+.deleteButton::after {
+    content:'';
+    position: absolute;
+    z-index: -1;
+    background: var(--deleteButtonHover);
+    inset:0;
+    scale: 0 1;
+    transform-origin: right;
+    transition: scale 450ms;
+}
+
+.deleteButton:hover::after,
+.deleteButton:focus-visible::after {
+    transform-origin: left;
+    scale: 1 1;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    color: #ffffff;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #ddd;
 }
 
-th, td {
-    text-align: left;
+td {
+    text-align: center;
     padding: 8px;
+    padding-right: 0;
+    align-items: center;
+    align-content: center;
+}
+
+.nonDelete {
+    text-align: left;
+    align-items: left;
+    align-content: left;
+    padding: 8px;
+    padding-right: 0;
 }
 
 th {
-    background-color: #007BFF;
+    background-color: var(--elementBack);
     color: white;
 }
 
+#deleteHead {
+    background: #000000;
+    border-right: solid #000000;
+    border-top: solid #000000;
+}
+
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #6d6c6c;
+    color: #000000;
 }
 
 footer {
@@ -99,33 +208,33 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background: #333;
-    color: #fff;
+    background: hsla(115, 47%, 19%, 0.523);
+    border: 1px solid rgba(255, 255, 255, 0.256);
+    border-bottom: none;
+    color: #69bf0d;
     text-align: center;
-    padding: 10px 0;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 0;
     z-index: 10;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
 }
 
-.over-budget{
+#budgetDisplay {
+    margin-left:9em;
+}
+
+.over-budget {
     color: red;
+    background-color: #00000087;
+    border: solid 1px;
+    border-color: red;
+    border-bottom: none;
 }
 
-@media screen and (max-width: 600px) {
-    header, footer {
-        padding: 10px;
-    }
-
-    form, table {
-        margin-top: 10px;
-    }
-
-    input[type="text"],
-    input[type="number"],
-    input[type="submit"],
-    button {
-        width: auto;
-        margin-top: 5px;
-    }
+.required{
+    font-size: 12px;
+    color: rgb(172, 81, 81);
+    font-weight: bold;
 }

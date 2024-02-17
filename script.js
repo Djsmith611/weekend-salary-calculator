@@ -11,10 +11,8 @@ const submitButton = document.getElementById('submitButton');
 const footer = document.getElementById('footer');
 // Employee container
 const employees = document.getElementById('employeeData');
-
 // Monthly cost display
 const totalMonthly = document.getElementById('totalMonthly');
-
 // Monthly cost to update
 var currentMonthlyCost = 0;
 
@@ -38,22 +36,27 @@ function addEmployee(event){
     // Creating a new first name table data
     let firstName = document.createElement('td');
     firstName.textContent = firstNameInput.value;
+    firstName.className = 'nonDelete';
     employee.appendChild(firstName);
     // Creating a new last name table data
     let lastName = document.createElement('td');
     lastName.textContent = lastNameInput.value;
+    lastName.className = 'nonDelete'
     employee.appendChild(lastName);
     // Creating a new id number table data
     let idNumber = document.createElement('td');
     idNumber.textContent = idInput.value;
+    idNumber.className = 'nonDelete';
     employee.appendChild(idNumber);
     let jobTitle = document.createElement('td');
     jobTitle.textContent = jobTitleInput.value;
+    jobTitle.className = 'nonDelete';
     employee.appendChild(jobTitle);
     // Creating a new salary table data
     let salary = document.createElement('td');
     salary.textContent = '$'+ parseFloat(salaryInput.value).toFixed(2);
     salary.className = 'salaryValue';
+    salary.classList.add('nonDelete');
     employee.appendChild(salary);
     // Calling update on monthly cost, false for no deletion
     updateMonthlyCost(false, parseFloat(salaryInput.value));
