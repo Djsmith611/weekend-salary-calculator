@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/CSS"href="style.css">
-    <script src="client.js" defer></script>
+    <script src="script.js" defer></script>
     <title>Salary Calculator</title>
   </head>
   <body>
@@ -13,17 +13,16 @@
     <main>
       <form id="addEmployeeForm">
         <h2>Add Employee</h2>
-        <label for="firstName">First:</label><input type="text" id="firstName" data-testid="firstNameInput" placeholder="First">
-        <label for="lastName">Last:</label><input type="text" id="lastName" data-testid="lastNameInput" placeholder="Last">
-        <label for="idNumber">ID #:</label><input type="number" id="idNumber" data-testid="idInput" placeholder="ID">
-        <label for="jobTitle">Title:</label><input type="text" id="jobTitle" data-testid="titleInput" placeholder="Title">
-        <label for="salary">Salary:</label><input type="number" id="salary" data-testid="annualSalaryInput" placeholder="Salary">
+        <label for="firstName">First:</label><input type="text" id="firstName" data-testid="firstNameInput" placeholder="First" required>
+        <label for="lastName">Last:</label><input type="text" id="lastName" data-testid="lastNameInput" placeholder="Last" required>
+        <label for="idNumber">ID #:</label><input type="number" id="idNumber" data-testid="idInput" placeholder="ID" required><br>
+        <label for="jobTitle">Title:</label><input type="text" id="jobTitle" data-testid="titleInput" placeholder="Title" required>
+        <label for="salary">Salary:</label><input type="number" id="salary" data-testid="annualSalaryInput" placeholder="Salary" required>
         <input type="submit" id="submitButton" data-testid="submitButton">
       </form>
       <h2>Employees</h2>
       <table>
         <thead>
-          <th>Index</th>
           <th>First</th>
           <th>Last</th>
           <th>ID</th>
@@ -33,12 +32,13 @@
         <tbody id="employeeData">
         </tbody>
       </table>
+      <h2>Update Budget</h2>
+      <p>Current Budget: $<span id="budget">20000.00</span></p>
+      <label for="budgetInput">Update Budget: $</label><input type="number" id="budgetInput" placeholder="20000.00">
+      <button id="updateBudget">Update</button>
     </main>
-    <footer>
-      <p>Total Monthly: <span id="totalMonthly">-</span></p>
-      <p>Current Budget: <span id="budget">20000</span></p>
-      <label for="budgetInput">Update Budget:</label><input type="number" id="budgetInput" placeholder="20000">
-
+    <footer id="footer">
+      <p>Total Monthly: $<span id="totalMonthly">0.00</span></p>
     </footer>
   </body>
 </html>

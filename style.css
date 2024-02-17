@@ -1,0 +1,131 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    padding-bottom: 100px;
+}
+
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="submit"],
+button {
+    width: 98%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input[type="submit"],
+button {
+    align-self: center;
+    background: #28a745;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: #218838;
+}
+
+.deleteButton{
+    background: red;
+    width: 100px;
+}
+.deleteButton:hover {
+    background: rgb(145, 1, 1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 10;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.over-budget{
+    color: red;
+}
+
+@media screen and (max-width: 600px) {
+    header, footer {
+        padding: 10px;
+    }
+
+    form, table {
+        margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="submit"],
+    button {
+        width: auto;
+        margin-top: 5px;
+    }
+}
