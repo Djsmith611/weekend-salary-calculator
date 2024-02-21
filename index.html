@@ -21,23 +21,26 @@
         <label for="salary"><span class="required">*</span>Salary:</label><input type="number" id="salary" data-testid="annualSalaryInput" placeholder="Salary" required>
         <button type="submit" id="submitButton" class="button" data-testid="submitButton">Submit</button>
       </form>
-      <h2>Employee Database</h2>
-      <table>
-        <thead>
-          <th class="nonDelete">First</th>
-          <th class="nonDelete">Last</th>
-          <th class="nonDelete">ID</th>
-          <th class="nonDelete">Title</th>
-          <th class="nonDelete">Salary</th>
-          <th id="deleteHead"></th>
-        </thead>
-        <tbody id="employeeData">
-        </tbody>
-      </table>
+      <div id="tableDiv">
+        <h2>Employee Database</h2>
+        <table>
+          <thead>
+            <th class="nonDelete">First</th>
+            <th class="nonDelete">Last</th>
+            <th class="nonDelete">ID</th>
+            <th class="nonDelete">Title</th>
+            <th class="nonDelete">Salary</th>
+            <th id="deleteHead"></th>
+          </thead>
+          <tbody id="employeeData">
+          </tbody>
+        </table>
+      </div>
       <div id="budgetDiv">
           <h2>Budget</h2>
           <p id="budgetDisplay">Budget: $<span id="budget">20000.00</span></p>
-          <label for="budgetInput" id="budgetLabel">Update Budget: $</label><input type="number" id="budgetInput" placeholder="20000.00">
+          <div><label for="budgetInput" id="budgetLabel">Update Budget:</label><input type="number" id="budgetInput" placeholder="20000.00"></div>
+          
           <button id="updateBudget" class="button">Update</button>
       </div>
    </main>

@@ -16,6 +16,17 @@ body {
     color: #000000;
 }
 
+#tableDiv{
+    display: inline-block;
+    min-height:500px;
+    width: 100%;
+    border-bottom: 1px solid var(--elementBackAlt);
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 0;
+    background-color: #fefefe17;
+    border-radius: 20px;
+}
 header {
     background: var(--elementBack);
     color: rgb(255, 255, 255);
@@ -36,6 +47,7 @@ h1 {
 }
 
 main {
+    display: flex;
     padding: 20px;
     padding-bottom: 100px;
     color: #ffffff;
@@ -48,19 +60,19 @@ form,
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding-bottom: 1em;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 60%;
     box-shadow: 5px 5px 3px var(--shadow);
     border: solid 1px var(--shadow);
-
+    margin-top: 0;
+    text-align: center;
+    align-content: center;
+    align-items: center;
 }
 
 
 #budgetDiv {
-    margin-top: 2em;
     padding-top: 0.5em;
-    border-top-left-radius: 60%;
-    border-top-right-radius: 50px;
+    margin-left: 1em;
+    text-align: center;
 }
 
 label {
@@ -71,7 +83,6 @@ label {
 
 #budgetLabel {
     color: #ffffff;
-    margin-left: 3em;
 }
 
 input,
@@ -83,15 +94,14 @@ input,
     border: 1px solid rgb(255, 255, 255);
     background: var(--buttonBackground);
     color: white;
+    align-self: center;
+    display: inline-block;
 }
 
-#firstName {
-    width: 83%
+input{
+    width: 80%;
 }
 
-#lastName {
-    width: 93%
-}
 
 .button {
     display: inline-block;
@@ -159,10 +169,12 @@ input,
 }
 
 table {
-    width: 100%;
+    width: 95%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 0;
     color: #ffffff;
+    margin-right: 1em;
+    margin-left: 1em;
 }
 
 table,
@@ -193,9 +205,9 @@ th {
 }
 
 #deleteHead {
-    background: #000000;
-    border-right: solid #000000;
-    border-top: solid #000000;
+    background: #00000000;
+    border-right: solid #00000000;
+    border-top: solid #00000000;
 }
 
 tr:nth-child(even) {
@@ -222,7 +234,7 @@ footer {
 }
 
 #budgetDisplay {
-    margin-left:9em;
+    text-align: center;
 }
 
 .over-budget {
@@ -237,4 +249,14 @@ footer {
     font-size: 12px;
     color: rgb(172, 81, 81);
     font-weight: bold;
+}
+
+#addEmployeeForm{
+    display: inline-block;
+}
+
+#updateBudget, #submitButton{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
 }
