@@ -3,8 +3,8 @@
     --buttonBackground: #000000;
     --deleteButton: #370000;
     --deleteButtonHover:rgb(235, 0, 0);
-    --elementBack: hsl(241, 76%, 62%);
-    --elementBackAlt:hsl(241, 50%, 48%);
+    --elementBack: hsl(200, 76%, 62%);
+    --elementBackAlt:hsl(162, 50%, 48%);
     --shadow: rgba(78, 155, 222, 0.334);
 }
 
