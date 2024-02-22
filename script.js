@@ -15,7 +15,6 @@ const employees = document.getElementById('employeeData');
 const totalMonthly = document.getElementById('totalMonthly');
 // Monthly cost to update
 var currentMonthlyCost = 0;
-
 /* Budget variables */
 // Display for current budget
 const budgetDisplay = document.getElementById('budget');
@@ -163,5 +162,4 @@ submitButton.addEventListener('click', function(event){
 })// End event listener function
 
 budgetButton.addEventListener('click', updateBudget)
-
 // Delete button listeners are applied in the add employee function

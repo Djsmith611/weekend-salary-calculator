@@ -1,7 +1,7 @@
 {
   "name": "weekend-salary-calculator",
   "version": "1.0.0",
-  "description": "[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md",
+  "description": "README.md",
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose"
