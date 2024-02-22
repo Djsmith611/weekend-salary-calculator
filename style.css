@@ -216,10 +216,11 @@ tr:nth-child(even) {
 }
 
 footer {
+    margin-left: 25%;
+    margin-right: 25%;
     position: fixed;
-    left: 0;
     bottom: 0;
-    width: 100%;
+    width: 50%;
     background: hsla(115, 47%, 19%, 0.523);
     border: 1px solid rgba(255, 255, 255, 0.256);
     border-bottom: none;
