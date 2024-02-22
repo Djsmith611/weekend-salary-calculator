@@ -14,12 +14,12 @@ const employees = document.getElementById('employeeData');
 // Monthly cost display
 const totalMonthly = document.getElementById('totalMonthly');
 // Monthly cost to update
-var currentMonthlyCost = 0;
+let currentMonthlyCost = 0;
 /* Budget variables */
 // Display for current budget
 const budgetDisplay = document.getElementById('budget');
 // Budget to update initialized at 20000
-var budget = 20000;
+let budget = 20000;
 // New budget field
 const newBudget = document.getElementById('budgetInput');
 // Budget button
